@@ -20,31 +20,27 @@
             android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="username"
             android:layout_weight="1"/>
 
         <Button
             android:id="@+id/btnChangeUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CHANGE USER"
             android:layout_weight="1"/>
 
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/album"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:src="@drawable/ic_launcher_background"
         android:layout_weight="1"/>
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/songTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Title "
         android:textAlignment="center"
         android:textSize="14pt"
         android:layout_weight="1"/>
@@ -57,7 +53,6 @@
         android:gravity="center"
         android:textAlignment="center"
         android:lines="1"
-        android:text="artists"
         android:layout_weight="1"/>
 
     <TextView
@@ -66,7 +61,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:text="# plays"
         android:layout_weight="1"/>
 
     <LinearLayout
@@ -88,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_width="wrap_content"
-            app:srcCompat="@android:drawable/ic_media_pause" />
+            app:srcCompat="@android:drawable/ic_media_play" />
 
         <ImageButton
             android:id="@+id/imageButton4"
