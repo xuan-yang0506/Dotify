@@ -18,13 +18,13 @@
 
         <TextView
             android:id="@+id/username"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
         <Button
             android:id="@+id/btnChangeUser"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
@@ -71,21 +71,21 @@
 
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/btnPrevious"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_weight="1"
             app:srcCompat="@android:drawable/ic_media_previous" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/btnPlay"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             app:srcCompat="@android:drawable/ic_media_play" />
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/btnNext"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_width="wrap_content"
