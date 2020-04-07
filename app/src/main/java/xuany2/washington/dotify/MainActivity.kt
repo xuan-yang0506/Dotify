@@ -16,20 +16,30 @@ class MainActivity : AppCompatActivity() {
     val songs = mapOf(
         0 to "Only My Railgun",
         1 to "Warriors",
-        2 to "RISE"
+        2 to "RISE",
+        3 to "Lemon"
+    )
+
+    val artistes = mapOf(
+        0 to "fripSide",
+        1 to "League of Legends, 2WEI & Edda Hayes",
+        2 to "League of Legends, The Glitch Mob & Mako",
+        3 to "Kenshi Yonezu"
     )
 
     val songImage = mapOf(
         0 to R.drawable.railgun,
         1 to R.drawable.warriors,
-        2 to R.drawable.rise
+        2 to R.drawable.rise,
+        3 to R.drawable.lemon
     )
 
     val users = mutableMapOf(
         "user1" to mutableMapOf(
             0 to 0,
             1 to 0,
-            2 to 0
+            2 to 0,
+            3 to 0
         )
     )
 
@@ -48,13 +58,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setup() {
-        for (i in 0..3) {
+        for (i in 0..4) {
             val randomNumber = Random.nextInt(1, 1000)
             timePlayedMap?.put(i, randomNumber)
         }
         username.text = "user1"
         btnChangeUser.text = "CHANGE USER"
-        current = Random.nextInt(0, 3)
+        current = Random.nextInt(0, 4)
         btnPrevious.setOnClickListener{previousBtn: View -> previous(previousBtn)}
         btnNext.setOnClickListener{v: View -> next(v)}
         btnPlay.setOnClickListener{v: View -> play(v)}
@@ -93,7 +103,8 @@ class MainActivity : AppCompatActivity() {
                 var newUserMap = mutableMapOf(
                     0 to 0,
                     1 to 0,
-                    2 to 0
+                    2 to 0,
+                    3 to 0
                 )
                 Toast.makeText(this,
                     "Welcome, new user \"$inputString\"!", Toast.LENGTH_SHORT).show()
@@ -126,6 +137,8 @@ class MainActivity : AppCompatActivity() {
         playedTimes.text = "$time plays"
         val albumName = songImage[current]
         album.setImageResource(songImage[current]?:0)
+        val artisteName = artistes[current]
+        artisteNameText.text = artisteName
     }
 
     fun play(view: View) {
@@ -136,7 +149,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun next(view: View) {
-        if (current == 2) {
+        if (current == 3) {
             current = 0
         } else {
             current++
@@ -147,7 +160,7 @@ class MainActivity : AppCompatActivity() {
 
     fun previous(view: View) {
         if (current == 0) {
-            current = 2
+            current = 3
         } else {
             current--;
         }
