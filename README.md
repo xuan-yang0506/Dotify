@@ -1,4 +1,4 @@
-# Dotify by Sean yang
+# Dotify by Sean Yang
 
 This is a simple Android app that stimulates a music play app. A user can click the play
 button to increment the number of time played. One can also add a new user and the time played
