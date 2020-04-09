@@ -13,43 +13,18 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
-    val songs = mapOf(
-        0 to "Only My Railgun",
-        1 to "Warriors",
-        2 to "RISE",
-        3 to "Lemon"
-    )
-
-    val artistes = mapOf(
-        0 to "fripSide",
-        1 to "League of Legends, 2WEI & Edda Hayes",
-        2 to "League of Legends, The Glitch Mob & Mako",
-        3 to "Kenshi Yonezu"
-    )
-
-    val songImage = mapOf(
-        0 to R.drawable.railgun,
-        1 to R.drawable.warriors,
-        2 to R.drawable.rise,
-        3 to R.drawable.lemon
-    )
-
-    val users = mutableMapOf(
-        "user1" to mutableMapOf(
-            0 to 0,
-            1 to 0,
-            2 to 0,
-            3 to 0
-        )
-    )
+    var songs = mapOf<Int, String>()
+    var artistes = mapOf<Int, String>()
+    var songImage = mapOf<Int, Int>()
+    var users = mutableMapOf<String, MutableMap<Int, Int>>()
 
     var DEFAULT_PARAMS = LinearLayout.LayoutParams(
         LinearLayout.LayoutParams.MATCH_PARENT,
         LinearLayout.LayoutParams.WRAP_CONTENT, 1f)
 
     var current = -1
-    var currentUser = "user1"
-    var timePlayedMap = users[currentUser]
+    var currentUser = ""
+    var timePlayedMap: MutableMap<Int, Int>? = mutableMapOf<Int, Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +33,39 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setup() {
+        songs = mapOf(
+            0 to resources.getString(R.string.songName0),
+            1 to resources.getString(R.string.songName1),
+            2 to resources.getString(R.string.songName2),
+            3 to resources.getString(R.string.songName3)
+        )
+
+        artistes = mapOf(
+            0 to resources.getString(R.string.singer0),
+            1 to resources.getString(R.string.singer1),
+            2 to resources.getString(R.string.singer2),
+            3 to resources.getString(R.string.singer3)
+        )
+
+        songImage = mapOf(
+            0 to R.drawable.railgun,
+            1 to R.drawable.warriors,
+            2 to R.drawable.rise,
+            3 to R.drawable.lemon
+        )
+
+        users = mutableMapOf(
+            resources.getString(R.string.defaultUserName) to mutableMapOf(
+                0 to 0,
+                1 to 0,
+                2 to 0,
+                3 to 0
+            )
+        )
+
+        currentUser = resources.getString(R.string.defaultUserName)
+        timePlayedMap = users.get(currentUser)
+
         for (i in 0..4) {
             val randomNumber = Random.nextInt(1, 1000)
             timePlayedMap?.put(i, randomNumber)
@@ -77,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         var editId = View.generateViewId()
         editText.id = editId
         var btnApply = Button(this)
-        btnApply.text = "Apply"
+        btnApply.text = resources.getString(R.string.apply)
         userSection.removeAllViews()
         editText.layoutParams = DEFAULT_PARAMS
         btnApply.layoutParams = DEFAULT_PARAMS

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Dotify</string>
+    <string name="songName0">Only My Railgun</string>
+    <string name="songName1">Warriors</string>
+    <string name="songName2">RISE</string>
+    <string name="songName3">Lemon</string>
+    <string name="singer0">fripSide</string>
+    <string name="singer1">League of Legends, 2WEI &amp; Edda Hayes</string>
+    <string name="singer2">League of Legends, The Glitch Mob &amp; Mako</string>
+    <string name="singer3">Kenshi Yonezu</string>
+    <string name="defaultUserName">user1</string>
+    <string name="apply">Apply</string>
 </resources>
