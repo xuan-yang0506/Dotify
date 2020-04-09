@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:padding="@dimen/padding"
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:layout_gravity="center">
@@ -34,8 +34,10 @@
     <ImageView
         android:id="@+id/album"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_weight="1"/>
+        android:layout_height="@dimen/imageHeight"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"/>
 
     <TextView
         android:id="@+id/songTitle"
@@ -43,7 +45,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textAlignment="center"
-        android:textSize="14pt"
+        android:textSize="@dimen/textSizeLarge"
         android:layout_weight="1"/>
 
     <TextView
@@ -53,6 +55,7 @@
         android:ellipsize="end"
         android:gravity="center"
         android:textAlignment="center"
+        android:textSize="@dimen/textSizeSmall"
         android:lines="1"
         android:layout_weight="1"/>
 
@@ -62,6 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textAlignment="center"
+        android:textSize="@dimen/textSizeSmall"
         android:layout_weight="1"/>
 
     <LinearLayout
@@ -72,25 +76,29 @@
 
 
         <ImageButton
+            android:background="@null"
             android:id="@+id/btnPrevious"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:layout_height="30pt"
+            android:layout_width="30pt"
             android:layout_weight="1"
-            app:srcCompat="@android:drawable/ic_media_previous" />
+            app:srcCompat="@drawable/ic_previous" />
 
         <ImageButton
+            android:background="@null"
+            android:scaleType="fitCenter"
             android:id="@+id/btnPlay"
-            android:layout_height="wrap_content"
+            android:layout_height="30pt"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
-            app:srcCompat="@android:drawable/ic_media_play" />
+            android:layout_width="30pt"
+            app:srcCompat="@drawable/ic_play" />
 
         <ImageButton
+            android:background="@null"
             android:id="@+id/btnNext"
-            android:layout_height="wrap_content"
+            android:layout_height="30pt"
             android:layout_weight="1"
-            android:layout_width="wrap_content"
-            app:srcCompat="@android:drawable/ic_media_next" />
+            android:layout_width="30pt"
+            app:srcCompat="@drawable/ic_next" />
     </LinearLayout>
 
 </LinearLayout>

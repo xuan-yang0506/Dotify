@@ -10,4 +10,8 @@
     <string name="singer3">Kenshi Yonezu</string>
     <string name="defaultUserName">user1</string>
     <string name="apply">Apply</string>
+    <string name="blankUserInput">User name cannot be blank</string>
+    <string name="changeUser">CHANGE USER</string>
+    <string name="nextSong">Skipping to next track</string>
+    <string name="previousSong">Skipping to previous track</string>
 </resources>

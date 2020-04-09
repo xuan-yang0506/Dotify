@@ -70,8 +70,8 @@ class MainActivity : AppCompatActivity() {
             val randomNumber = Random.nextInt(1, 1000)
             timePlayedMap?.put(i, randomNumber)
         }
-        username.text = "user1"
-        btnChangeUser.text = "CHANGE USER"
+        username.text = resources.getString(R.string.defaultUserName)
+        btnChangeUser.text = resources.getString(R.string.changeUser)
         current = Random.nextInt(0, 4)
         btnPrevious.setOnClickListener{previousBtn: View -> previous(previousBtn)}
         btnNext.setOnClickListener{v: View -> next(v)}
@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
         var inputString: String = input.text.toString().trim()
         if (inputString.isEmpty()) {
             Toast.makeText(this,
-                "User name can't be blank", Toast.LENGTH_SHORT).show()
+                resources.getString(R.string.blankUserInput), Toast.LENGTH_SHORT).show()
         } else {
             if (users.containsKey(inputString)) {
                 currentUser = inputString
@@ -162,7 +162,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             current++
         }
-        Toast.makeText(this, "“Skipping to next track", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, resources.getText(R.string.nextSong), Toast.LENGTH_SHORT).show()
         showSong()
     }
 
@@ -172,7 +172,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             current--;
         }
-        Toast.makeText(this, "“Skipping to previous track", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, resources.getText(R.string.previousSong), Toast.LENGTH_SHORT).show()
         showSong()
     }
 }
