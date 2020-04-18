@@ -8,8 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ericchee.songdataprovider.Song
 
-class SongListAdapter(private val listOfSongs: List<Song>): RecyclerView.Adapter<SongListAdapter.SongViewHolder>() {
+class SongListAdapter(private val initialListOfSongs: MutableList<Song>): RecyclerView.Adapter<SongListAdapter.SongViewHolder>() {
 
+    private var listOfSongs: MutableList<Song> = initialListOfSongs.toMutableList()
     var onSongClickListener: ((song: Song) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongViewHolder {
@@ -19,6 +20,11 @@ class SongListAdapter(private val listOfSongs: List<Song>): RecyclerView.Adapter
     }
 
     override fun getItemCount() = listOfSongs.size
+
+    fun shuffle(shuffledList: MutableList<Song>) {
+        listOfSongs = shuffledList
+        notifyDataSetChanged()
+    }
 
     override fun onBindViewHolder(holder: SongListAdapter.SongViewHolder, position: Int) {
         val song = listOfSongs[position]
