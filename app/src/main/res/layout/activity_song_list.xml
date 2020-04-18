@@ -17,4 +17,41 @@
         tools:listitem="@layout/item_song"
         />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:id="@+id/textNowPlaying"
+            tools:text="Now Playing Song name by Artist"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btnShuffle"
+            app:layout_constraintTop_toTopOf="@id/btnShuffle"
+            android:layout_marginLeft="20pt"
+            android:textSize="15sp"
+            android:textAlignment="gravity"
+            android:gravity="left"
+            android:lines="1"
+            android:ellipsize="end"/>
+        <Button
+            android:id="@+id/btnShuffle"
+            android:text="SHUFFLE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

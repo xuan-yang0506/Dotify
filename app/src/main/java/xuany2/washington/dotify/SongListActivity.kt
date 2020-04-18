@@ -16,6 +16,10 @@ class SongListActivity : AppCompatActivity() {
         val listOfSong = SongDataProvider.getAllSongs()
         val songAdapter = SongListAdapter(listOfSong)
 
+        songAdapter.onSongClickListener = {
+            textNowPlaying.text = "${it.title} - ${it.artist}"
+        }
+
         rvSong.adapter = songAdapter
     }
 }
