@@ -6,12 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.ericchee.songdataprovider.Song
 import kotlinx.android.synthetic.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        // Keys for intents
+        const val SONG_KEY = "song_key"
+    }
 
     var songs = mapOf<Int, String>()
     var artistes = mapOf<Int, String>()
@@ -29,7 +35,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setup()
+        // setup()
+        setup2()
+    }
+
+    fun setup2() {
+        val song: Song = intent.getParcelableExtra<Song>(SONG_KEY)
+        val songName = song.title
+        songTitle.text = songName
+        val time = Random.nextInt(0, 10032)
+        playedTimes.text = "$time plays"
+        album.setImageResource(song.largeImageID)
+        val artisteName = song.artist
+        artisteNameText.text = artisteName
+        username.text = "Misaka 10032"
+        btnChangeUser.text = "Can't change user in this mode"
     }
 
     fun setup() {
