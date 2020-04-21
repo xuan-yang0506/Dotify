@@ -14,4 +14,11 @@
     <string name="changeUser">CHANGE USER</string>
     <string name="nextSong">Skipping to next track</string>
     <string name="previousSong">Skipping to previous track</string>
+    <string name="userName">Misaka 20001</string>
+    <string name="cannotChangeUserText">CANNOT CHANGE USER IN THIS MODE</string>
+    <string name="noSongPlaying">No song is currently playing</string>
+    <string name="numTimePlay">%d plays</string>
+    <string name="allSong">All Songs</string>
+    <string name="nowPlayingText">%s - %s</string>
+    <string name="defaultNowPlaying">No song is currently playing</string>
 </resources>

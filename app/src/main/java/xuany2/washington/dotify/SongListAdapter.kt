@@ -10,7 +10,9 @@ import com.ericchee.songdataprovider.Song
 
 class SongListAdapter(private val initialListOfSongs: MutableList<Song>): RecyclerView.Adapter<SongListAdapter.SongViewHolder>() {
 
+    // stores the list of songs passed in
     private var listOfSongs: MutableList<Song> = initialListOfSongs.toMutableList()
+    // stores the onclick event
     var onSongClickListener: ((song: Song) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongViewHolder {
@@ -21,6 +23,8 @@ class SongListAdapter(private val initialListOfSongs: MutableList<Song>): Recycl
 
     override fun getItemCount() = listOfSongs.size
 
+    // change the list of songs to the shuffled list
+    // notify the data set to change the list
     fun shuffle(shuffledList: MutableList<Song>) {
         listOfSongs = shuffledList
         notifyDataSetChanged()

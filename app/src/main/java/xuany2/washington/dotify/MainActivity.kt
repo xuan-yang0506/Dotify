@@ -39,20 +39,20 @@ class MainActivity : AppCompatActivity() {
         setup2()
     }
 
-    fun setup2() {
+    private fun setup2() {
         val song: Song = intent.getParcelableExtra<Song>(SONG_KEY)
         val songName = song.title
         songTitle.text = songName
         val time = Random.nextInt(0, 10032)
-        playedTimes.text = "$time plays"
+        playedTimes.text = getString(R.string.numTimePlay).format(time)
         album.setImageResource(song.largeImageID)
         val artisteName = song.artist
         artisteNameText.text = artisteName
-        username.text = "Misaka 10032"
-        btnChangeUser.text = "Can't change user in this mode"
+        username.text = getString(R.string.userName)
+        btnChangeUser.text = getString(R.string.cannotChangeUserText)
     }
 
-    fun setup() {
+    private fun setup() {
         songs = mapOf(
             0 to resources.getString(R.string.songName0),
             1 to resources.getString(R.string.songName1),
@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
         showSong()
     }
 
-    fun changeUser(view: View) {
+    private fun changeUser(view: View) {
         var editText = EditText(this)
         var editId = View.generateViewId()
         editText.id = editId
@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity() {
         btnApply.setOnClickListener{v: View -> applyChange(v, editId)}
     }
 
-    fun applyChange(view: View, editID: Int) {
+    private fun applyChange(view: View, editID: Int) {
         var input = findViewById<EditText>(editID)
         var inputString: String = input.text.toString().trim()
         if (inputString.isEmpty()) {
@@ -144,7 +144,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun restoreUserSection() {
+    private fun restoreUserSection() {
         userSection.removeAllViews()
         var text = TextView(this)
         text.text = currentUser
@@ -158,7 +158,7 @@ class MainActivity : AppCompatActivity() {
         showSong()
     }
 
-    fun showSong() {
+    private fun showSong() {
         val songName = songs[current]
         songTitle.text = songName
         val time = timePlayedMap?.get(current)
@@ -169,14 +169,14 @@ class MainActivity : AppCompatActivity() {
         artisteNameText.text = artisteName
     }
 
-    fun play(view: View) {
+    private fun play(view: View) {
         var currentTimePlayed: Int = timePlayedMap?.get(current) ?:0
         currentTimePlayed++
         timePlayedMap?.put(current, currentTimePlayed)
         showSong()
     }
 
-    fun next(view: View) {
+    private fun next(view: View) {
         if (current == 3) {
             current = 0
         } else {
@@ -186,7 +186,7 @@ class MainActivity : AppCompatActivity() {
         showSong()
     }
 
-    fun previous(view: View) {
+    private fun previous(view: View) {
         if (current == 0) {
             current = 3
         } else {

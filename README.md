@@ -1,11 +1,11 @@
 # Dotify by Sean Yang
 
-This is a simple Android app that stimulates a music play app. A user can click the play
-button to increment the number of time played. One can also add a new user and the time played
-of all songs will be set to 0. A user can also skip or go back to preivous songs.
+This is a second version of a music player. The main part of the player is a list of musics.
+A user can click on any music in the list and the mini player in the bottom will show
+the current music playing. When a user clicks on the mini player, the screen will be directed
+to a full player. User can go back to list by clicking on the back button below. 
+Unfortunately this version does not support user changes. 
 
-## Extra credit
-I have completed extra credit #1 #4 #5
 
 ## Screenshots
 <img src="./ScreenShot.png" alt="Screenshot of the app" height="500" />
