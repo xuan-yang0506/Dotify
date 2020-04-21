@@ -43,13 +43,16 @@ class MainActivity : AppCompatActivity() {
         val song: Song = intent.getParcelableExtra<Song>(SONG_KEY)
         val songName = song.title
         songTitle.text = songName
-        val time = Random.nextInt(0, 10032)
+        var time = Random.nextInt(0, 10032)
         playedTimes.text = getString(R.string.numTimePlay).format(time)
         album.setImageResource(song.largeImageID)
         val artisteName = song.artist
         artisteNameText.text = artisteName
         username.text = getString(R.string.userName)
         btnChangeUser.text = getString(R.string.cannotChangeUserText)
+        btnPlay.setOnClickListener{
+            playedTimes.text = getString(R.string.numTimePlay).format(++time)
+        }
     }
 
     private fun setup() {
