@@ -7,6 +7,9 @@ to a full player. User can go back to list by clicking on the back button below.
 Unfortunately this version does not support user changes. 
 
 
+### Extra credit
+I have completed extra credit 
+
 ## Screenshots
 <img src="./ScreenShot.png" alt="Screenshot of the app" height="500" />
 

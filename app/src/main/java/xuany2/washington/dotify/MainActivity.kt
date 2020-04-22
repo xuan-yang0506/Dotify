@@ -2,6 +2,7 @@ package xuany2.washington.dotify
 
 import android.app.ActionBar
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
@@ -53,6 +54,15 @@ class MainActivity : AppCompatActivity() {
         btnPlay.setOnClickListener{
             playedTimes.text = getString(R.string.numTimePlay).format(++time)
         }
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            finish()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun setup() {
