@@ -28,6 +28,11 @@ class UltimateMainActivity : AppCompatActivity(), OnSongClickListener {
         super.onSaveInstanceState(outState)
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        supportFragmentManager.popBackStack()
+        return super.onNavigateUp()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (savedInstanceState != null) {
@@ -56,6 +61,7 @@ class UltimateMainActivity : AppCompatActivity(), OnSongClickListener {
 
 
         if (supportFragmentManager.backStackEntryCount > 0) {
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
             nowPlayingSection.visibility = View.INVISIBLE
         }
 
