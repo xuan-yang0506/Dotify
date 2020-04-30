@@ -5,14 +5,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.ericchee.songdataprovider.Song
-import kotlinx.android.synthetic.main.activity_ultimate_main.*
 import kotlinx.android.synthetic.main.fragment_song_list.*
 import xuany2.washington.dotify.R
 import xuany2.washington.dotify.SongListAdapter
-import java.util.Collections.shuffle
 
 class SongListFragment: Fragment() {
     private lateinit var songListAdaptor: SongListAdapter
