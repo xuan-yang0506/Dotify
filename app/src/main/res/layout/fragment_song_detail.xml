@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding"
+    tools:context=".activity.SongDetailActivity"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:id="@+id/userSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_weight="1">
+
+        <TextView
+            tools:text="username"
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Button
+            tools:text="change user"
+            android:id="@+id/btnChangeUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/album"
+        tools:src="@drawable/warriors"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/imageHeight"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"/>
+
+    <TextView
+        android:id="@+id/songTitle"
+        tools:text="song title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/textSizeLarge"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+
+    <TextView
+        tools:text="artist name"
+        android:id="@+id/artisteNameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/textSizeSmall"
+        android:lines="1"
+        android:layout_weight="1"/>
+
+    <TextView
+        tools:text="# played"
+        android:id="@+id/playedTimes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/textSizeSmall"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+
+        <ImageButton
+            android:background="@null"
+            android:id="@+id/btnPrevious"
+            android:layout_height="30pt"
+            android:layout_width="30pt"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_previous" />
+
+        <ImageButton
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:id="@+id/btnPlay"
+            android:layout_height="30pt"
+            android:layout_weight="1"
+            android:layout_width="30pt"
+            app:srcCompat="@drawable/ic_play" />
+
+        <ImageButton
+            android:background="@null"
+            android:id="@+id/btnNext"
+            android:layout_height="30pt"
+            android:layout_weight="1"
+            android:layout_width="30pt"
+            app:srcCompat="@drawable/ic_next" />
+    </LinearLayout>
+
+</LinearLayout>

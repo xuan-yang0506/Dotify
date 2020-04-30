@@ -1,4 +1,4 @@
-package xuany2.washington.dotify
+package xuany2.washington.dotify.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +7,10 @@ import android.widget.Toast
 import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
 import kotlinx.android.synthetic.main.activity_song_list.*
-import xuany2.washington.dotify.MainActivity.Companion.SONG_KEY
-import java.util.Collections.shuffle
+import kotlinx.android.synthetic.main.activity_ultimate_main.*
+import xuany2.washington.dotify.R
+import xuany2.washington.dotify.SongListAdapter
+import xuany2.washington.dotify.activity.SongDetailActivity.Companion.SONG_KEY
 
 class SongListActivity : AppCompatActivity() {
 
@@ -48,7 +50,7 @@ class SongListActivity : AppCompatActivity() {
             if (currentSong == null) {
                 Toast.makeText(this, getString(R.string.noSongPlaying), Toast.LENGTH_SHORT).show()
             } else {
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, SongDetailActivity::class.java)
                 intent.putExtra(SONG_KEY, currentSong)
                 startActivity(intent)
             }
