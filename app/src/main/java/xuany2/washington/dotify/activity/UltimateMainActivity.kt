@@ -56,7 +56,8 @@ class UltimateMainActivity : AppCompatActivity(), OnSongClickListener {
                 .add(R.id.fragContainer, songListFragment, SongListFragment.TAG)
                 .commit()
         } else {
-            songListFragment = supportFragmentManager.findFragmentByTag(SongListFragment.TAG) as SongListFragment
+            songListFragment = supportFragmentManager.findFragmentByTag(SongListFragment.TAG)
+                                            as SongListFragment
         }
 
 

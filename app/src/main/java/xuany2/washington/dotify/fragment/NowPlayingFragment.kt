@@ -31,6 +31,13 @@ class NowPlayingFragment: Fragment() {
                 this.song = song
             }
         }
+        if (savedInstanceState == null) {
+            numPlayed = Random.nextInt(0, 20001)
+        } else {
+            with(savedInstanceState) {
+                numPlayed = getInt(NUM_PLAYED)
+            }
+        }
     }
 
     fun updateSong(song: Song?) {
@@ -57,13 +64,6 @@ class NowPlayingFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         username?.text = getString(R.string.userName)
         btnChangeUser?.text = getString(R.string.cannotChangeUserText)
-        if (savedInstanceState == null) {
-            numPlayed = Random.nextInt(0, 20001)
-        } else {
-            with(savedInstanceState) {
-                numPlayed = getInt(NUM_PLAYED)
-            }
-        }
         updateSongViews()
         btnPlay.setOnClickListener{
             this.numPlayed++
