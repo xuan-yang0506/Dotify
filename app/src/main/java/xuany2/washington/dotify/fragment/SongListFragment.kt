@@ -67,6 +67,7 @@ class SongListFragment: Fragment() {
     }
 
     fun shuffleList(newListOfSong: MutableList<Song>) {
+        this.songList = newListOfSong
         songListAdaptor.shuffle(newListOfSong)
     }
 }

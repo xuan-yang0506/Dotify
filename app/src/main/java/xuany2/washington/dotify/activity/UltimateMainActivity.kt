@@ -43,21 +43,21 @@ class UltimateMainActivity : AppCompatActivity(), OnSongClickListener {
             listOfSong = SongDataProvider.getAllSongs().toMutableList()
         }
         setContentView(R.layout.activity_ultimate_main)
-        var songListFragment = SongListFragment()
-        val argumentBundle = Bundle().apply {
-            putParcelableArrayList(SongListFragment.ARG_SONG_LIST, ArrayList(listOfSong))
-        }
-        songListFragment.arguments = argumentBundle
 
         if (supportFragmentManager.findFragmentByTag(SongListFragment.TAG) == null) {
+            var songListFragment = SongListFragment()
+            val argumentBundle = Bundle().apply {
+                putParcelableArrayList(SongListFragment.ARG_SONG_LIST, ArrayList(listOfSong))
+            }
+            songListFragment.arguments = argumentBundle
 
             supportFragmentManager
                 .beginTransaction()
                 .add(R.id.fragContainer, songListFragment, SongListFragment.TAG)
                 .commit()
         } else {
-            songListFragment = supportFragmentManager.findFragmentByTag(SongListFragment.TAG)
-                                            as SongListFragment
+//            songListFragment = supportFragmentManager.findFragmentByTag(SongListFragment.TAG)
+//                                            as SongListFragment
         }
 
 
@@ -111,7 +111,10 @@ class UltimateMainActivity : AppCompatActivity(), OnSongClickListener {
         }
 
         btnShuffle.setOnClickListener {
+//            listOfSong.apply { shuffle() }
+//            songListFragment.shuffleList(listOfSong)
             listOfSong.apply { shuffle() }
+            var songListFragment = supportFragmentManager.findFragmentByTag(SongListFragment.TAG) as SongListFragment
             songListFragment.shuffleList(listOfSong)
         }
 
