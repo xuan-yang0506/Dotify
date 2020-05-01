@@ -55,9 +55,6 @@ class UltimateMainActivity : AppCompatActivity(), OnSongClickListener {
                 .beginTransaction()
                 .add(R.id.fragContainer, songListFragment, SongListFragment.TAG)
                 .commit()
-        } else {
-//            songListFragment = supportFragmentManager.findFragmentByTag(SongListFragment.TAG)
-//                                            as SongListFragment
         }
 
 
@@ -111,8 +108,6 @@ class UltimateMainActivity : AppCompatActivity(), OnSongClickListener {
         }
 
         btnShuffle.setOnClickListener {
-//            listOfSong.apply { shuffle() }
-//            songListFragment.shuffleList(listOfSong)
             listOfSong.apply { shuffle() }
             var songListFragment = supportFragmentManager.findFragmentByTag(SongListFragment.TAG) as SongListFragment
             songListFragment.shuffleList(listOfSong)
